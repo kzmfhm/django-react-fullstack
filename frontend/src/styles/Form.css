@@ -34,3 +34,22 @@
   .form-button:hover {
     background-color: #0056b3;
   }
+
+  .not-found-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+  }
+  .not-found{
+    color: #8d91a3;
+    font-size: 13px;
+    font-style: normal;
+    font-family: Gilmer;
+    font-weight: normal;
+    line-height: 1.53846154;
+    font-stretch: normal;
+    letter-spacing: normal;
+   
+  }

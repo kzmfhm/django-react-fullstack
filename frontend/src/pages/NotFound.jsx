@@ -1,10 +1,14 @@
-
+import "../styles/Form.css"
+import NotFoundImg from "../components/NotFoundImg"
 
 const NotFound = () => {
   return (
-    <div>
-      <h1>404 Not Found</h1>
-      <p>Page you are looking for does not exist</p>
+    <div className="not-found-container">
+    <div className="not-found">
+      <NotFoundImg/>
+      <h1>Oops! 404 Not Found</h1>
+      <p className="not-found">Something went wrong! This page does not exist.</p>
+    </div>
     </div>
   )
 }
