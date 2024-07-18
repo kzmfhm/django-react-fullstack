@@ -78,6 +78,7 @@ const Home = () => {
     formData.append("image", image);
     createData("/api/items/", formData, () => fetchData("/api/items/", setItems));
   };
+
   const resetNoteForm = () => {
     setTitle("");
     setContent("");
@@ -89,6 +90,11 @@ const Home = () => {
     setPrice(0);
     setQuantity(0);
     setImage(null);
+    const fileInput = document.getElementById("image");
+    if (fileInput) {
+      fileInput.value = null;
+    }
+  
   };
   const resetForm = () => {
     resetNoteForm();
