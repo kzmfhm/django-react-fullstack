@@ -51,6 +51,7 @@ const Home = () => {
       const res = await api.post(endpoint, data);
       if (res.status === 201) {
         alert("Created successfully");
+        resetForm()
       } else {
         alert("Failed to create");
       }
@@ -65,10 +66,7 @@ const Home = () => {
     createData("/api/notes/", { content, title }, () => fetchData("/api/notes/", setNotes));
   };
 
-  // const handleCreateItem = (e) => {
-  //   e.preventDefault();
-  //   createData("/api/items/", { name,category, description, price, quantity,image }, () => fetchData("/api/items/", setItems));
-  // };
+
   const handleCreateItem = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -80,7 +78,22 @@ const Home = () => {
     formData.append("image", image);
     createData("/api/items/", formData, () => fetchData("/api/items/", setItems));
   };
-  
+  const resetNoteForm = () => {
+    setTitle("");
+    setContent("");
+  };
+  const resetItemForm = () => {
+    setName("");
+    setDescription("");
+    setCategory("");
+    setPrice(0);
+    setQuantity(0);
+    setImage(null);
+  };
+  const resetForm = () => {
+    resetNoteForm();
+    resetItemForm()
+  }
   return (
     <div className="container">
       <div>
@@ -130,7 +143,7 @@ const Home = () => {
         <br />
         <label htmlFor="image">Image:</label>
         <br />
-        <input type="file" name="image" id="image" onChange={(e) => setImage(e.target.files[0])} />
+        <input type="file"  id="image" onChange={(e) => setImage(e.target.files[0])} />
         <br />
         <input type="submit" value="Submit" />
       </form>
