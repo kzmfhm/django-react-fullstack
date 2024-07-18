@@ -16,7 +16,7 @@ const Home = () => {
   const [quantity, setQuantity] = useState(0);
   const [image, setImage] = useState(null);
 
-
+  
   useEffect(() => {
     fetchData("/api/notes/", setNotes);
     fetchData("/api/items/", setItems);

@@ -1,4 +1,3 @@
-
 /* eslint-disable react/prop-types */
 import "../styles/Note.css"
 
@@ -12,7 +11,6 @@ const Item = ({item, onDelete}) => {
         <p className="note-content">{item.price}</p>
         <p className="note-content">{item.quantity}</p>
         {item.image && <img src={item.image} alt={item.name} style={{ width: "200px", height: "auto" }} />}
-        
         <p className="note-date">{formattedDate}</p>
         <button className="delete-button" onClick={() => onDelete(item.id)}>Delete</button>
     </div>
