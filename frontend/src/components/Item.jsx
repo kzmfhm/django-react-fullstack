@@ -8,8 +8,11 @@ const Item = ({item, onDelete}) => {
     <div className="note-container">
         <p className="note-title">{item.name}</p>
         <p className="note-content">{item.description}</p>
+        <p className="note-content">{item.category}</p>
         <p className="note-content">{item.price}</p>
         <p className="note-content">{item.quantity}</p>
+        {item.image && <img src={item.image} alt={item.name} style={{ width: "200px", height: "auto" }} />}
+        
         <p className="note-date">{formattedDate}</p>
         <button className="delete-button" onClick={() => onDelete(item.id)}>Delete</button>
     </div>
