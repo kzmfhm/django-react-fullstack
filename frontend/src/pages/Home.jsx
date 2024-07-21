@@ -149,7 +149,7 @@ const Home = () => {
         <br />
         <label htmlFor="image">Image:</label>
         <br />
-        <input type="file"  id="image" onChange={(e) => setImage(e.target.files[0])} />
+        <input type="file" id="image" multiple onChange={(e) => setImage(e.target.files[0])} />
         <br />
         <input type="submit" value="Submit" />
       </form>
